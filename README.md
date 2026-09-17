@@ -36,6 +36,10 @@ Windows 已购漫画下载与独立转换工具。当前版本：**1.0.0**。
 
 本工具为独立项目，不是 Melonbooks 官方软件。
 
+## 致谢
+
+本项目在开发过程中使用了 OpenAI Codex 辅助编程。
+
 ## 许可证
 
 项目自有代码采用 [MIT License](LICENSE)。第三方组件、版权归属和许可原文见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 与 [licenses/](licenses/)。
