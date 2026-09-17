@@ -12,7 +12,8 @@ Windows 已购漫画下载与独立转换工具。当前版本：**1.0.0**。
 
 ## 界面预览
 
-<img width="592" height="420" alt="Snipaste_2026-09-17_09-19-03" src="https://github.com/user-attachments/assets/4f638c7d-3a6a-4439-864e-d00764b7c351" /> <img width="592" height="420" alt="Snipaste_2026-09-17_09-20-03" src="https://github.com/user-attachments/assets/6844df14-a6a7-4c72-ad31-62baf703b1c3" />
+<img width="592" height="420" alt="Snipaste_2026-09-17_09-19-03" src="https://github.com/user-attachments/assets/4f638c7d-3a6a-4439-864e-d00764b7c351" /> 
+<img width="592" height="420" alt="Snipaste_2026-09-17_09-20-03" src="https://github.com/user-attachments/assets/6844df14-a6a7-4c72-ad31-62baf703b1c3" />
 
 
 ## 功能
