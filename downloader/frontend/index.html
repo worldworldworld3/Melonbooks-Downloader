@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src https: data:; style-src 'unsafe-inline'; script-src 'unsafe-inline' 'unsafe-eval'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Melonbooks Downloader</title><style>/* APP_CSS */</style></head>
+<body>
+<header class="appbar"><div class="brand"><div><strong>Melonbooks Downloader</strong></div></div><div class="header-actions"><span id="account" class="account">尚未登录</span><button id="login" class="outline-light">登录账号</button></div></header>
+<nav class="tabs" aria-label="书架分类"><button class="active" data-tab="all">全部作品 <span id="count">0</span></button><button data-tab="circle">社团</button><button data-tab="author">作者</button></nav>
+<main id="libraryPage"><section class="heading"><div><h1 id="heading">全部作品</h1></div><div class="header-actions"><button id="convertLocal" class="secondary" disabled title="登录后可批量添加本地文件并校验授权">转换本地文件</button><button id="refresh" class="secondary">↻ 刷新书架</button></div></section>
+<section class="toolbar" aria-label="筛选与显示"><div class="filters" role="group" aria-label="作品筛选"><button class="active" data-filter="all">全部</button><button data-filter="general">一般</button><button data-filter="adult">成年</button></div><div class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索标题、社团、作者" aria-label="搜索标题、社团、作者"></div><select id="sort" aria-label="排序"><option value="date">最近购买</option><option value="title">标题顺序</option><option value="size">文件大小</option></select><div class="view-switch" role="group" aria-label="视图"><button id="gridView" class="active" title="封面网格" aria-label="封面网格" aria-pressed="true">▦</button><button id="listView" title="详细列表" aria-label="详细列表" aria-pressed="false">☷</button></div></section>
+<div id="groups" class="groups" aria-label="分组"></div>
+<div class="selection-row"><label><input type="checkbox" id="selectAll"> 选择当前结果</label><button id="clear" class="secondary" disabled>取消全部选择</button><span id="visibleCount">0 本作品</span></div>
+<section id="shelf" class="shelf" aria-label="漫画书架"></section>
+<section id="empty" class="empty"><div class="empty-icon">▤</div><h2 id="emptyTitle" hidden></h2><p id="emptyText">登录 Melonbooks 账号，查看已购漫画的封面与作品信息。</p><button id="emptyLogin" class="primary">登录并加载书架</button></section>
+</main>
+<main id="localPage" hidden>
+<section class="heading"><div><h1>批量转换本地文件</h1></div><button id="backLibrary" class="secondary">返回书架</button></section>
+<div class="local-account"><span id="localAccount"></span></div>
+<div id="dropZone" class="drop-zone" role="button" tabindex="0" aria-label="拖拽文件到此处，或点击批量添加文件"><strong>将文件拖到这里</strong><span>支持批量添加 .melon / .ebg 文件，自动去重并校验账号授权</span><span class="drop-link">或点击选择文件</span></div>
+<div class="local-toolbar"><button id="addLocal" class="secondary">添加文件</button><button id="addCache" class="secondary">添加下载缓存</button><button id="recheckLocal" class="secondary">重新校验</button><button id="clearLocal" class="text-button">清空列表</button><span id="localSummary" role="status"></span></div>
+<div class="local-table-wrap"><table class="local-table"><thead><tr><th>文件 / 作品</th><th>大小</th><th>账号校验与转换状态</th><th>操作</th></tr></thead><tbody id="localRows"></tbody></table></div>
+
+</main>
+<footer><div class="footer-top"><div class="destination"><span>转换输出位置</span><button id="folder" title="选择保存目录"></button><button id="clearCache" class="text-button">清除缓存</button><button id="openFolder" class="text-button">打开文件夹 ↗</button></div><div class="download-actions"><span id="selectedCount">已选择 0 本</span><button id="cancel" class="secondary" hidden>取消操作</button><button id="download" class="primary" disabled>下载并自动转换</button><button id="startLocal" class="primary" hidden disabled>转换可用文件</button></div></div><div class="progress-track"><div id="progress"></div></div><div class="status-row"><span id="status" role="status" aria-live="polite">正在连接下载器…</span><span id="progressText"></span></div></footer>
+<dialog id="detail"><button id="closeDetail" class="close" aria-label="关闭详情">×</button><div id="detailBody"></div><div class="detail-actions"><button id="detailSelect" class="primary">选择此作品</button></div></dialog>
+<dialog id="cacheDialog" aria-labelledby="cacheTitle"><h2 id="cacheTitle">清除下载缓存？</h2><p id="cacheSummary"></p><ul class="cache-impact"><li>清除本程序所有保存位置对应的源文件缓存、JSON 下载记录及未完成下载。</li><li>已转换的 ZIP/PDF、你手动添加的外部源文件、账号设置不会删除。</li><li>仅依赖缓存识别的“已下载”标记和源文件大小会消失，作品可以再次下载。</li><li>无法再通过这些缓存重试转换，需要重新下载或提供源文件。</li></ul><p>此操作无法撤销，且不会自动清理旧版放在输出目录里的源文件。</p><div class="detail-actions"><button id="cancelClearCache" class="secondary" autofocus>取消</button><button id="confirmClearCache" class="primary">确认清除缓存</button></div></dialog>
+<div id="toast" role="alert" hidden></div>
+<script>/* APP_JS */</script></body></html>
